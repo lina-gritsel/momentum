@@ -7,7 +7,9 @@ const city = document.querySelector(".city");
 
 async function getWeather() {
   const defaultCity = city.value || "Minsk";
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&lang=en&appid=a3af42ebefd88cd481454f659190bc54&units=metric`;
+  const token = `a3af42ebefd88cd481454f659190bc54`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=`;
+  const url = `${weatherUrl}${defaultCity}&lang=en&appid=${token}&units=metric`;
   const res = await fetch(url);
   const data = await res.json();
   weatherIcon.className = "weather-icon owf";

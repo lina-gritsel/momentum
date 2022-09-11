@@ -16,7 +16,7 @@ async function getQuotes(id = 0) {
 }
 
 changeQuote.addEventListener("click", () => {
-  getQuotes(randomQuote);
+  getQuotes(getRandomNum(1643));
 });
 
 getQuotes(randomQuote);

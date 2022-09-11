@@ -21,13 +21,13 @@ const stopAudio = () => {
   isPlay = false;
 };
 
-function toggleBtn() {
+const toggleBtn = () => {
   play.classList.toggle("pause");
   isPlay ? stopAudio() : playAudio();
 }
 play.addEventListener("click", toggleBtn);
 
-function playNext() {
+const playNext = () => {
   play.classList.add("pause");
   playNum++;
   if (playNum > totalTrack) playNum = 0;
@@ -35,7 +35,7 @@ function playNext() {
 }
 playNextAudio.addEventListener("click", playNext);
 
-function playPrev() {
+const playPrev = () => {
   play.classList.add("pause");
   playNum--;
   if (playNum < 0) {

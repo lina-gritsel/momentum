@@ -1,12 +1,11 @@
-import { getRandomNum } from "../utils/index.js";
-import { getTimeOfDay } from "../utils/index.js";
+import { getRandomNum, getTimeOfDay } from "../utils/index.js";
 
 const body = document.querySelector("body");
 let randomNum = getRandomNum(20);
 const url =
   "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images";
 
-function setBg(randomNum) {
+const setBg=(randomNum) => {
   const img = new Image();
   img.src = getBgUrl(randomNum);
   img.onload = () => {
@@ -23,7 +22,7 @@ const getBgUrl = (randomNum) => {
 setBg(randomNum);
 
 const slideNext = document.querySelector(".slide-next");
-function getSlideNext() {
+const getSlideNext = () => {
   randomNum++;
   if (randomNum > 20) {
     randomNum = 1;
@@ -33,7 +32,7 @@ function getSlideNext() {
 slideNext.addEventListener("click", getSlideNext);
 
 const slidePrev = document.querySelector(".slide-prev");
-function getSlidePrev() {
+const getSlidePrev=() => {
   randomNum--;
   if (randomNum < 1) {
     randomNum = 20;
